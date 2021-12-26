@@ -24,8 +24,29 @@ class Welcome extends CI_Controller {
 		//$this->key 			= "dev-08ceccb0-572e-11ec-91c4-85d2e994b59b"; //development
 		$this->key 			= "a92718e0-85ef-5649-8c72-023f63daf04f"; //produktion
 		
+		$this->proxy   		= "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/proxy.php";
+		$this->webhook      = "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/webhook.php";
+		$this->json_webhook = "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/json_webhook.php";
+
+		//$this->proxy   		= "http://hotabilardus.com/digiflazz/proxy.php";
+		//$this->webhook      = "http://hotabilardus.com/digiflazz/json_webhook.php";
+		//$this->json_webhook = "http://hotabilardus.com/digiflazz/webhook.php";
+
+		//$this->proxy   		= "https://dev.tamorastore.com/proxy.php";
+		//$this->webhook      = "https://dev.tamorastore.com/json_webhook.php";
+		//$this->json_webhook = "https://dev.tamorastore.com/webhook.php";
+
+		
 	}
 
+
+	public function struk()
+	{
+		$data['customer_no'] 	= $this->input->get('customer_no');
+		$data['sn'] 			= $this->input->get('sn');
+
+		$this->load->view('struk',$data);	
+	}
 
 	public function index()
 	{
@@ -118,7 +139,7 @@ class Welcome extends CI_Controller {
 
 
 		$fields['url'] 			= "https://api.digiflazz.com/v1/deposit";		
-		$proxy = "http://hotabilardus.com/digiflazz/proxy.php";
+		$proxy = $this->proxy;
 
 		$x = json_encode($this->curl_proxy_request($proxy,$fields));
 		//$x=json_encode($this->curl_json_request($url,$fields));
@@ -190,7 +211,7 @@ class Welcome extends CI_Controller {
 		
 		//$proxy = "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/json.php";		
 		//$proxy = "http://localhost/digiflazz/json.php";
-		$proxy = "http://hotabilardus.com/digiflazz/proxy.php";
+		$proxy = $this->proxy;
 
 
 
@@ -230,7 +251,7 @@ class Welcome extends CI_Controller {
 		//$proxy = $url;
 		//$proxy = "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/json.php";
 		//$proxy = "http://localhost/digiflazz/json.php";
-		$proxy = "http://hotabilardus.com/digiflazz/proxy.php";
+		$proxy = $this->proxy;
 
 
 
@@ -273,7 +294,7 @@ class Welcome extends CI_Controller {
 		//$proxy = $url;
 		//$proxy = "https://sibahanpe.pakpakbharatkab.go.id/digiflazz/json.php";		
 		//$proxy = "http://localhost/digiflazz/json.php";
-		$proxy = "http://hotabilardus.com/digiflazz/proxy.php";
+		$proxy = $this->proxy;
 
 
 		//var_dump($fields);
@@ -298,7 +319,7 @@ class Welcome extends CI_Controller {
 	public function webhook_json()
 	{
 
-		$json_webhook = "http://hotabilardus.com/digiflazz/json_webhook.php";		
+		$json_webhook = $this->json_webhook;		
 		$data['json'] = ($this->curl_proxy_request($json_webhook,""));
 
 		$this->load->view('webhook_json',$data);	

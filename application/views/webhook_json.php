@@ -33,6 +33,7 @@
               
               <th>No</th>
               <th>id</th>
+              <th>Prnt</th>
               <th>tgl</th>           
               
               <th>customer_no</th>           
@@ -64,12 +65,24 @@
 
          // echo $xx->tgl;
 
+
           $xxxxx = @$xx->json->data;
+
+
+          if($xxxxx->status=='Sukses')
+          {
+            $print="<a href='".base_url()."index.php/welcome/struk/?customer_no=".urlencode($xxxxx->customer_no)."&sn=".urlencode($xxxxx->sn)."' target='blank' class='btn btn-success btn-xs' >Print</a>";
+          }else{
+            $print="";
+          }
+
+
            echo (" 
               
               <tr>
                 <td>$no</td>                
                 <td>$xx->id</td>
+                <td>$print</td>
                 <td>$xx->tgl</td>
                 
                 <td>$xxxxx->customer_no</td>
@@ -108,6 +121,7 @@
 
 <script type="text/javascript">
   
+
 
 $(document).ready(function(){
 
