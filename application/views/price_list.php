@@ -62,6 +62,7 @@
           $btn = "<button class='btn btn-warning btn-xs' onclick='topup(\"$x->buyer_sku_code\",\"$x->product_name\",\"$x->price\",\"$x->seller_name\",\"$x->category\");return false;'>Top Up</button>";
           $no++;
 
+          $x->seller_product_status = $x->seller_product_status=='1'?'<font color=green>Aktif</font>':'<font color=red>Non Aktif</font>';
             
             echo (" 
               
