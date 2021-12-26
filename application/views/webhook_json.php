@@ -71,7 +71,7 @@
 
           if($xxxxx->status=='Sukses')
           {
-            $print="<a href='".base_url()."index.php/welcome/struk/?customer_no=".urlencode($xxxxx->customer_no)."&sn=".urlencode($xxxxx->sn)."' target='blank' class='btn btn-success btn-xs' >Print</a>";
+            $print="<a href='".base_url()."index.php/welcome/struk/?customer_no=".urlencode($xxxxx->customer_no)."&sn=".urlencode($xxxxx->sn)."&tgl=".urlencode($xx->tgl)."' target='blank' class='btn btn-success btn-xs' >Print</a>";
           }else{
             $print="";
           }

@@ -44,6 +44,7 @@ class Welcome extends CI_Controller {
 	{
 		$data['customer_no'] 	= $this->input->get('customer_no');
 		$data['sn'] 			= $this->input->get('sn');
+		$data['tgl'] 			= $this->input->get('tgl');
 
 		$this->load->view('struk',$data);	
 	}

@@ -28,7 +28,7 @@ font-size:10px;
 <table>
 <tr>
 	<td>Tanggal</td>
-	<td>: <?php echo tglindo(date('Y-m-d'))?></td>	
+	<td>: <?php echo $tgl?></td>	
 </tr>
 <tr>
 	<td>Customer No</td>
@@ -38,6 +38,11 @@ font-size:10px;
 <tr>
 	<td>Serial Number</td>
 	<td>: <b><?php echo $sn?></b></td>	
+</tr>
+
+<tr>
+	<td>Message</td>
+	<td>: Transaksi Sukses</td>	
 </tr>
 
 
